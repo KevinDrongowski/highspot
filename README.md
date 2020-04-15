@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequisites
+
+You must have node installed to run this via "npm start"
+
+Download the repository and run npm install in the highspot directory.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -17,52 +23,40 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## TODO Items
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Currently, the entire result set of cards gets wiped and a new axios request is sent after every letter typed. <br />
+I'd like to buffer this so we wait until the user is done typing.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+I also did not implement any logic for placeholder images while they are loading, <br />
+so that is a potential improvement as well.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+I used a few external packages to achieve the goal of the exercise.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### redux
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I am using redux to handle the storing of data to avoid the pain of passing props up and down.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### thunk
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I am using thunk as middleware in redux to allow async actions such as the get request called by...
 
-## Learn More
+### axios
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+axios is my preferred package for making ajax calls, this was needed to make the api call to https://api.elderscrollslegends.io/v1/cards.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### node-sass
 
-### Code Splitting
+SASS/SCSS make writing css so much cleaner and easier to maintain, <br />
+node-sass enables me to write scss in this react app.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Scope Decisions
 
-### Analyzing the Bundle Size
+I stuck pretty closely to the requirements in the interest of time. <br />
+However, I noticed that the rarity was being returned by the api, and thought it <br />
+would be fun to add some styling to each card reflect that. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I noticed some visual bugs on the cards that have a thicker border, but I was <br />
+unable to determine any correlation to the data so I could style around it.

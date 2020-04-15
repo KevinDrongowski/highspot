@@ -56,7 +56,10 @@ node-sass enables me to write scss in this react app.
 
 I stuck pretty closely to the requirements in the interest of time. <br />
 However, I noticed that the rarity was being returned by the api, and thought it <br />
-would be fun to add some styling to each card reflect that. 
+would be fun to add some styling to each card reflect that.
 
-I noticed some visual bugs on the cards that have a thicker border, but I was <br />
+There are some visual inconsistencies on the card images that have a thicker border, but I was <br />
 unable to determine any correlation to the data so I could style around it.
+
+I noticed that the api would return a "next" link, so I leveraged that rather than <br />
+keeping the querystring parameters in the redux store and applying them to every call.

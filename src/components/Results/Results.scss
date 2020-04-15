@@ -3,17 +3,28 @@
   padding: 0;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
 
   @media screen and (min-width: 600px) {
     margin: 20px;
-    padding: 0 0 20px 20px;
+    padding: 0 10px 20px;
+    grid-template-columns: 50% 50%;
+  }
+
+  @media screen and (min-width: 850px) {
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  @media screen and (min-width: 1100px) {
+    grid-template-columns: 25% 25% 25% 25%;
   }
 
   .no-results, .loading{
+    grid-column-start: 1;
+    grid-column-end: 5;
     margin-top: 20px;
     text-align: center;
     color: #FFFFFF;

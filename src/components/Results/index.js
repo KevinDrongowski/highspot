@@ -46,7 +46,7 @@ class Results extends Component {
     const noResults = (cards.length === 0);
     return (
       <div id="results">
-      {noResults ? (<div className="no-results">No Results</div>) : (cards.map((g, i) => {
+      {(noResults && !isLoadingData) ? (<div className="no-results">No Results</div>) : (cards.map((g, i) => {
         return <Card key={i} {...g} />
       }))}
       {isLoadingData && <div className="loading"><img src={loadingImage} alt="loading" /></div>}

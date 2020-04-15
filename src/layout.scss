@@ -33,7 +33,10 @@ body{
   padding: 10px 0;
   #logo{
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
+    // this prevents a bizarre behavior of the container div in small
+    max-width: 328px;
+    width: 100%;
   }
 
   @media screen and (min-width: 600px) {

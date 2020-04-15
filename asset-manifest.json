@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/highspot/static/css/main.0fcf16a1.chunk.css",
+    "main.js": "/highspot/static/js/main.625c59b7.chunk.js",
+    "main.js.map": "/highspot/static/js/main.625c59b7.chunk.js.map",
+    "runtime-main.js": "/highspot/static/js/runtime-main.7bd49766.js",
+    "runtime-main.js.map": "/highspot/static/js/runtime-main.7bd49766.js.map",
+    "static/js/2.9d7cf96d.chunk.js": "/highspot/static/js/2.9d7cf96d.chunk.js",
+    "static/js/2.9d7cf96d.chunk.js.map": "/highspot/static/js/2.9d7cf96d.chunk.js.map",
+    "index.html": "/highspot/index.html",
+    "precache-manifest.affc6c787c616549f602ead33f3c8503.js": "/highspot/precache-manifest.affc6c787c616549f602ead33f3c8503.js",
+    "service-worker.js": "/highspot/service-worker.js",
+    "static/css/main.0fcf16a1.chunk.css.map": "/highspot/static/css/main.0fcf16a1.chunk.css.map",
+    "static/js/2.9d7cf96d.chunk.js.LICENSE.txt": "/highspot/static/js/2.9d7cf96d.chunk.js.LICENSE.txt",
+    "static/media/elder-scrolls-bg.jpg": "/highspot/static/media/elder-scrolls-bg.21f88751.jpg",
+    "static/media/esl-logo-latest.png": "/highspot/static/media/esl-logo-latest.b9d0a541.png",
+    "static/media/loading.gif": "/highspot/static/media/loading.750fc7f7.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7bd49766.js",
+    "static/js/2.9d7cf96d.chunk.js",
+    "static/css/main.0fcf16a1.chunk.css",
+    "static/js/main.625c59b7.chunk.js"
+  ]
+}

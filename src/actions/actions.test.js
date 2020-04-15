@@ -1,5 +1,5 @@
-import { setCards, fetchCards } from './';
-import { SET_CARDS, FETCH_CARDS, API_START, API_END } from './types';
+import { setCards, fetchCards, seachUpdate } from './';
+import { SET_CARDS, CLEAR_CARDS, API_START, API_END } from './types';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import MockAdapter from 'axios-mock-adapter';
@@ -36,10 +36,9 @@ describe('fetchCards', () => {
         ]
     });
 
-    store.dispatch(fetchCards(20)).then(() => {
+    store.dispatch(fetchCards('https://api.elderscrollslegends.io/v1/cards')).then(() => {
         let expectedActions = [{
-          type: API_START,
-          payload: FETCH_CARDS
+          type: API_START
         },
           {
             type: SET_CARDS,
@@ -50,10 +49,20 @@ describe('fetchCards', () => {
             }
         },
         {
-          type: API_END,
-          payload: FETCH_CARDS
+          type: API_END
         }]
         expect(store.getActions()).toEqual(expectedActions);
     });
   })
-})
+});
+
+describe('seachUpdate', () => {
+  it('should result in a call to SET_CARDS', () => {
+      const query = "test";
+      const expectedAction = {
+        type: SET_CARDS,
+        payload: query
+      }
+      expect(setCards(query)).toEqual(expectedAction)
+  })
+});

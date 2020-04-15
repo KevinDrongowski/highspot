@@ -5,24 +5,29 @@
   border-radius: 15px;
 
   display: grid;
+  // 1 across on mobile
   grid-template-columns: 100%;
   grid-template-rows: auto;
 
   @media screen and (min-width: 600px) {
     margin: 20px;
     padding: 0 10px 20px;
+    // 2 across breakpoint
     grid-template-columns: 50% 50%;
   }
 
   @media screen and (min-width: 850px) {
+    // 3 across breakpoint
     grid-template-columns: 33% 33% 33%;
   }
 
   @media screen and (min-width: 1100px) {
+    // 4 across breakpoint
     grid-template-columns: 25% 25% 25% 25%;
   }
 
   .no-results, .loading{
+    // the following lines make the loading/no-results divs certered in the grid
     grid-column-start: 1;
     grid-column-end: 5;
     margin-top: 20px;

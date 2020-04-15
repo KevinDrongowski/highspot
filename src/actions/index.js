@@ -1,17 +1,17 @@
 import axios from "axios";
-import { SET_CARDS, FETCH_CARDS, CLEAR_CARDS, API_START, API_END } from "./types";
+import { SET_CARDS, CLEAR_CARDS, API_START, API_END } from "./types";
 
 export function fetchCards(fetchUrl) {
   return function(dispatch) {
     // start loading gif
-    dispatch(apiStart(FETCH_CARDS));
+    dispatch(apiStart());
     // axios get request to the end point, Step 2 in api flow
     return axios.get(fetchUrl).then(({ data }) => {
       // dispatch a SET_CARDS action Step 3 in api flow
       dispatch(setCards(data));
     }).finally(() => {
       // end loading gif
-      dispatch(apiEnd(FETCH_CARDS));
+      dispatch(apiEnd());
     });
   };
 }
@@ -37,16 +37,14 @@ function clearCards() {
   };
 }
 
-function apiStart(label) {
+function apiStart() {
   return {
-    type: API_START,
-    payload: label
+    type: API_START
   };
 }
 
-function apiEnd(label) {
+function apiEnd() {
   return {
-    type: API_END,
-    payload: label
+    type: API_END
   };
 }

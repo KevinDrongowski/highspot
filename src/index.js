@@ -8,7 +8,9 @@ import thunk from 'redux-thunk';
 
 const store = createStore(allReducers,
   compose(
+    // thunk for async
     applyMiddleware(thunk),
+    // this extension allows me to check redux stores in browser
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );

@@ -7,6 +7,7 @@ class Search extends Component {
   // TODO: Add buffer to prevent cards fetch while user is still typing
 
   handleSearchChange(e) {
+    // remove all characters that are not numbers or letters to avoid errors and prevent injection
     const nameQuery = e.target.value.replace(/[^0-9a-z]/gi, '');
     this.props.seachUpdate(nameQuery);
   }

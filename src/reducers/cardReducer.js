@@ -1,6 +1,5 @@
 import {
   SET_CARDS,
-  FETCH_CARDS,
   CLEAR_CARDS,
   API_START,
   API_END
@@ -19,7 +18,6 @@ const cardReducer = (state = {cards:[]}, action) => {
         updatedState.next = "LAST_PAGE";
       }
       updatedState.cards.push(...cards);
-
       return updatedState;
     case CLEAR_CARDS:
       return {
@@ -27,21 +25,15 @@ const cardReducer = (state = {cards:[]}, action) => {
         cards: []
       };
     case API_START:
-      if (action.payload === FETCH_CARDS) {
-        return {
-          ...state,
-          isLoadingData: true
-        };
-      }
-      break;
+      return {
+        ...state,
+        isLoadingData: true
+      };
     case API_END:
-      if (action.payload === FETCH_CARDS) {
-        return {
-          ...state,
-          isLoadingData: false
-        };
-      }
-      break;
+      return {
+        ...state,
+        isLoadingData: false
+      };
     default:
       return state;
   }

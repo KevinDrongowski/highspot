@@ -32,7 +32,7 @@
 
   .card-image{
     text-align: center;
-    // I attempted to find some logic for the cards that have a border, but nothing seemed consistent.
+    // I attempted to find some logic for the cards that have a big border, but nothing seemed consistent.
     // this padding seemed to fit most cases
     padding: 5px 5px 0;
     img{
@@ -40,12 +40,14 @@
       max-width: 350px;
     }
   }
+
   .card-info{
     padding: 0 20px 5px;
     p{
       margin: 0 10px 10px;
     }
   }
+
   .card-name{
     font-size: 24px;
     margin-bottom: 10px;

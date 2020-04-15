@@ -1,0 +1,52 @@
+
+.card{
+  display: inline-block;
+  border-radius: 15px;
+  border: #000000 3px solid;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  color: #FFFFFF;
+  min-width: 200px;
+  width: calc(100% * (1/2));
+      flex: none;
+
+  @media screen and (min-width: 600px) {
+    margin: 20px 20px 0 0;
+    min-width: 230px;
+    width: calc(100% * (1/4) - 30px);
+  }
+
+  &.Legendary{
+    background: rgba(50, 50, 0, 0.5);
+    border: #ffc60a 3px solid;
+  }
+  &.Epic{
+    background: rgba(50, 0, 50, 0.5);
+    border: #eb0aff 3px solid;
+  }
+  &.Rare{
+    background: rgba(0, 0, 50, 0.5);
+    border: #0a43ff 3px solid;
+  }
+
+  .card-image{
+    text-align: center;
+    // I attempted to find some logic for the cards that have a border, but nothing seemed consistent.
+    // this padding seemed to fit most cases
+    padding: 5px 5px 0;
+    img{
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+  .card-info{
+    padding: 0 20px 5px;
+    p{
+      margin: 0 10px 10px;
+    }
+  }
+  .card-name{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
